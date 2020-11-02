@@ -1,15 +1,20 @@
 $(document).ready(function () {
   // time and date using moment js
-  var currentDate = moment().format("dddd MMM Do YYYY");
-  var currentTime = moment().format("H");
+  var currentDay = moment().format("dddd");
+  var currentDate= moment().format("MMM Do YYYY")
+  var displayHour = moment().format("h")
+  var displayMin = moment().format("mm")
+   var currentTime = moment().format("H");
   var times = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
+  var currentTimeEl =$("#currentTime")
   var currentDayEl = $("#currentDay");
-  var timeEl = $("li");
-  var inputArea = $(".inputArea");
+  var timeEl = $(".time-block");
+  var textArea = $(".description");
 
 
-  currentDayEl.text(currentDate);
+  currentDayEl.text(currentDay + ", " + currentDate);
+  currentTimeEl.text(displayHour + ":" + displayMin)
 
   colorChange();
   // changes timeslot color based on time past, present, future
@@ -17,15 +22,15 @@ $(document).ready(function () {
     for (var i = 0; i < timeEl.length; i++) {
       // past time color
       if (currentTime > times[i]) {
-        inputArea[i].setAttribute("id", "past")
+        textArea[i].setAttribute("id", "past")
       }
       // present time color
       if (currentTime == times[i]) {
-        inputArea[i].setAttribute("id", "present");
+        textArea[i].setAttribute("id", "present");
       }
       //   future time color
       else if (currentTime < times[i]) {
-        inputArea[i].setAttribute("id", "future");
+        textArea[i].setAttribute("id", "future");
       }
     };
   }
@@ -37,7 +42,7 @@ $(document).ready(function () {
   
   
   // on button click input is submitted to local storage & stored to its time slot 
-  $("ul").on("click", ".saveBtn", function (event) {
+  timeEl.on("click", ".saveBtn", function (event) {
     event.preventDefault();
     var text = ($(this).prev().val());
 

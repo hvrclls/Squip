@@ -1,94 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      <section class="timeBlock">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <ul class="blocks">
-                <li value="9">
-                  <span class="timeArea">9 A.M</span>
-                  <textarea class="inputArea 9"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="10">
-                  <span class="timeArea">10 A.M</span>
-                  <textarea class="inputArea 10"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="11">
-                  <span class="timeArea">11 A.M</span>
-                  <textarea class="inputArea 11"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="12">
-                  <span class="timeArea">12 P.M</span>
-                  <textarea class="inputArea 12"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="13">
-                  <span class="timeArea">1 P.M</span>
-                  <textarea class="inputArea 13"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="14">
-                  <span class="timeArea">2 P.M</span>
-                  <textarea class="inputArea 14"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="15">
-                  <span class="timeArea">3 P.M</span>
-                  <textarea class="inputArea 15"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="16">
-                  <span class="timeArea">4 P.M</span>
-                  <textarea class="inputArea 16"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-                <li value="17">
-                  <span class="timeArea">5 P.M</span>
-                  <textarea class="inputArea 17"></textarea>
-                  <span class="saveBtn"><i class="fas fa-archive"></i></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <script src="https://kit.fontawesome.com/78a97d8215.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+    <p id="currentTime" class="lead"></p>
+  </header>
+  
+  <div id="hour-9" class="row time-block 9" value="9">
+    <div class="col-md-1 hour">9 A.M</div>
+    <textarea class="col-md-10 description 9"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-10" class="row time-block 10" value="10">
+    <div class="col-md-1 hour">10 A.M</div>
+    <textarea class="col-md-10 description 10"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-11" class="row time-block 11" value="11">
+    <div class="col-md-1 hour">11 A.M</div>
+    <textarea class="col-md-10 description 11"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-12" class="row time-block" value="12">
+    <div class="col-md-1 hour">12 P.M</div>
+    <textarea class="col-md-10 description 12"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-13" class="row time-block" value="13">
+    <div class="col-md-1 hour">1 P.M</div>
+    <textarea class="col-md-10 description 13"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-14" class="row time-block" value="14">
+    <div class="col-md-1 hour">2 P.M</div>
+    <textarea class="col-md-10 description 14"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-15" class="row time-block" value="15">
+    <div class="col-md-1 hour">3 P.M</div>
+    <textarea class="col-md-10 description 15"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-16" class="row time-block" value="16">
+    <div class="col-md-1 hour">4 P.M</div>
+    <textarea class="col-md-10 description 16"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+  <div id="hour-17" class="row time-block" value="17">
+    <div class="col-md-1 hour">5 P.M</div>
+    <textarea class="col-md-10 description 17"></textarea>
+    <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+  </div>
+
+
+  <script src="https://kit.fontawesome.com/78a97d8215.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
 </html>
